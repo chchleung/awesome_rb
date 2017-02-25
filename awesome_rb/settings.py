@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_comments',     # if use comment, import sites and comments( need pip install since ver 1.8)
     'blogs',
 ]
 
@@ -123,3 +125,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "common_static"),)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
+SITE_ID = 1

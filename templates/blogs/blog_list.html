@@ -1,4 +1,5 @@
 {% extends "blog_base.html" %}
+{% load comments %}
 
 {% block title %} blog list {% endblock %}
  
@@ -21,7 +22,7 @@
             <div class="span2 offset7">
                 <a href="{% url 'deleteblog' blog.id %}" title="delete"><i class="icon-trash"></i></a>
                 <a href="{% url 'updateblog' blog.id %}" title="edit"><i class="icon-edit"></i></a>
-                {# get_comment_count for blog as comment_count #}
+                {#% get_comment_count for blog as comment_count %#}
                 <a href="{% url 'detailblog' blog.id %}#cmt" title="comment"><i class=" icon-comment"></i>{{ comment_count }}</a>
             </div>
         </div>

@@ -8,7 +8,8 @@ from django.template import RequestContext
 
 
 # Create your views here.
-
+def blog_index(request):
+    return HttpResponseRedirect('/blogs/blog_list')
 
 def blog_list(request):
     blogs = Blog.objects.all()
@@ -131,3 +132,8 @@ def blog_delete(request, id=""):
         return HttpResponseRedirect("/blogs/blog_list/")
     blogs = Blog.objects.all()
     return render(request, 'blog_list.html', {"blogs": blogs})
+
+
+def blog_show_comment(request, id=''):
+    blog = Blog.objects.get(id=id)
+    return render(request, 'blog_comments_show.html', {"blog": blog})

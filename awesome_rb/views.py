@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 def index(request):
-    return HttpResponse("<p> 世界好 </P>")
+    return render(request,'__base__.html')
