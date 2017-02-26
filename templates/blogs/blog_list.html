@@ -1,5 +1,6 @@
 {% extends "blog_base.html" %}
 {% load comments %}
+{% load markdown_deux_tags %}
 
 {% block title %} blog list {% endblock %}
  
@@ -12,8 +13,8 @@
                 <i class="icon-tag"></i> <small>{{ tag }}</small>
             {% endfor %}
         </p>
-        {# load markup #}
-        <div>{{ blog.content }} </div>
+
+        <div>{{ blog.content|markdown }} </div>
  
         <div class="row-fluid">
             <div class="span3">

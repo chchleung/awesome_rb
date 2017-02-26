@@ -1,5 +1,6 @@
 {% extends "blog_base.html" %}
 {% load comments %}
+{% load markdown_deux_tags %}
  
 {% block title %} {{ blog.caption }} {% endblock %}
 
@@ -52,7 +53,7 @@ $(document).ready(function() {
     <section>
         <div class="blog-content">
             {% block article_content %}
-                {{ blog.content }}
+                {{ blog.content|markdown:'codehilite' }}
             {% endblock %} 
         </div>
     </section>

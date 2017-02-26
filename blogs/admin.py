@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 from blogs.models import Author, Blog, Tag
+from blogs.form import BlogForm
 
 
 # Register your models here.

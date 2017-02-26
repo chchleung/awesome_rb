@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_comments',     # if use comment, import sites and comments( need pip install since ver 1.8)
+    'markdown_deux',    # markdown 前端解析器
+    'pagedown',    # markdown 后台编辑器
     'blogs',
 ]
 
