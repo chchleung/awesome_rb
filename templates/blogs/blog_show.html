@@ -1,6 +1,7 @@
 {% extends "blog_base.html" %}
 {% load comments %}
 {% load markdown_deux_tags %}
+{% load gravatar %}
  
 {% block title %} {{ blog.caption }} {% endblock %}
 
@@ -90,6 +91,7 @@ $(document).ready(function() {
     {% get_comment_list for blog as blog_comment %}
     {% for comment in blog_comment %}
         <div class="container-fluid none-padding">
+            <img class="gravatar" src="{% gravatar_url comment.email %}">
             <p class="muted"><small>{{ comment.name }} </small><small>{{ comment.submit_date|date:"F,j,Y" }}</small></p>      
             {{ comment.comment }}           
         </div>
